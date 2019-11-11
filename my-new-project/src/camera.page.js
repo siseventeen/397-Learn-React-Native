@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Cameras } from 'expo';
+import { Camera } from 'expo';
 import  * as Permissions  from "expo-permissions"
 import styles from './styles';
+
+import Toolbar from './toolbar.component';
 
 export default class CameraPage extends React.Component {
     camera = null;
@@ -29,12 +31,16 @@ export default class CameraPage extends React.Component {
         }
 
         return (
-            <View>
-                <Camera
-                    style={styles.preview}
-                    ref={camera => this.camera = camera}
-                />
-            </View>
+            <React.Fragment>
+                <View>
+                    <Camera
+                        style={styles.preview}
+                        ref={camera => this.camera = camera}
+                    />
+                </View>
+
+                <Toolbar />
+            </React.Fragment>
         );
     };
 };
