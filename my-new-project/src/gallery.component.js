@@ -3,7 +3,8 @@ import { View, Image, ScrollView } from 'react-native';
 
 import styles from './styles';
 
-export default ({captures=[]}) => (
+export default function ({captures}) {
+    return(
     <ScrollView 
         horizontal={true}
         style={[styles.bottomToolbar, styles.galleryContainer]} 
@@ -15,3 +16,4 @@ export default ({captures=[]}) => (
         ))}
     </ScrollView>
 );
+}
